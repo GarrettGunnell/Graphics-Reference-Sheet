@@ -56,3 +56,5 @@ Semantics inform the GPU what your data represents.
 **SV_POSITION:** SV stands for system value and POSITION means the final vertex position.
 
 **SV_TARGET:** This is the frame buffer, which contains the image being generated.
+
+**TEXCOORD:** TEXCOORD is used to indicate arbitrary high precision data like texture coordinates.
