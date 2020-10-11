@@ -1,3 +1,3 @@
 # Graphics Programming Reference
 
-A collection of notes related to linear algebra, shaders, and rendering pipelines.
+A personal collection of notes related to linear algebra, shaders, rendering, texturing, and anything inbetween.
