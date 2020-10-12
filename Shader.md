@@ -53,6 +53,10 @@ Semantics inform the GPU what your data represents.
 
 **POSITION:** The POSITION semantic is the position of the vertex given to the vertex program.
 
+**NORMAL:** This semantic is for vertex shaders and it holds the value of the normal vector at the vertex.
+
+**TANGENT:** This semantic contains the tangent to the vertex if available.
+
 **SV_POSITION:** SV stands for system value and POSITION means the final vertex position.
 
 **SV_TARGET:** This is the frame buffer, which contains the image being generated.

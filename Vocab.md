@@ -14,11 +14,19 @@
 
 **Bounding Box:** The smallest box in which a given mesh would fit. This is used to check if the mesh is in view of the camera.
 
+**Clip Space:** This is the space that determines what the camera sees.
+
+**Transparency:** The easiest way to render transparency is to keep it binary, either a fragment is entirely opaque or entirely transparent. With alpha clipping you can easily create a "dissolving" effect by increasing the alpha cutoff over a period of time for a mesh until it is completely transparent. In the case of legitimate transparency such as glass, we draw our transparent fragment last in order to blend it with whatever has already been drawn behind it.
+
 ## Lighting
 
 **Diffuse Reflection / Lambert's Cosine Law:** Diffuse reflection is the reflection of light from a surface such that the rays are scattered at many angles rather than just one. When these rays penetrate a surface they lose some wavelength and emerge colored. A simple way of calculating how much light is reflected off the surface is with Lambert's cosine law. Lambert's cosine law states that the amount of diffused light reflected from a surface is directly proportional to the cosine of the angle at which the light hits it. Since the dot product of two unit length vectors is the cosine of the angle, we just take the dot product of the light vector and the surface normal and we find how much light hits that surface.
 
 **Specular Reflection:** Specular reflections are what happens when light is not diffused after hitting a surface, instead it bounces off the surface at an angle equivalent to the angle at which it hit the surface. Unlike diffuse reflections in which light rays are reflected in all directions, specular reflections are only visible when the reflected light is directed at you.
+
+* **Fresnel Reflection:** The Fresnel effect shows that a surface is more reflective when observed at a shallower angle, such as the edge of an object. The Fresnel equations are the mathematics to describe how reflective at any given point an object is. The smoother a surface, the stronger the Fresnel reflections are.
+
+**Image Based Lighting:** Image based lighting uses a cube map to inform an object of its ambient light. By painting on the environment surrounding an object, blurring it, and lowering the intensity, you can easily fake how ambient light is affecting an object.
 
 ## Texturing
 
@@ -28,7 +36,21 @@
 
 * **DXT5nm:** DXT5nm format stores the X and Y components of the normal and discards the Z. The Y component is stored in the green channel as usual but the X component is stored in the alpha channel. Because the Z component of the normal is discarded, it must be inferred at run time.
 
+**Shadow Map:** A shadow map records the depth of geometry.
+
+**Metallic Map:** A map to define the metallic value per texel instead of the whole material.
+
+**Smoothness Map:** Same as the metallic map, a smoothness map defines the smoothness value per texel.
+
+**Emission Map:** This type of map defines what texels should emit light.
+
+**Occlusion Map:** This map informs what texels should be in shadow.
+
 **Detail Map:** A detail map is applied to an existing texture for details, obviously.
+
+* **Detail Mask:** A detail mask is applied when you don't want a detail map to show up over the entire material. With the mask you can control which texels sample the detail map and which don't.
+
+**Transparency Map:** This map stores transparency data in each texel.
 
 **Normal Blending:** When using both a base normal map and a detail normal map, there are several ways to blend these normals together to produce more satisfying results.
 
@@ -49,3 +71,5 @@
 **Trilinear Filtering:** Similar to bilinear filtering, except this technique also interpolates between adjacent mipmap levels to get a smoother transition between mipmaps.
 
 **Anisotropic Filtering:** Which mipmap is chosen is based on the worst dimension. If the difference between the width and the height of a projected texture is high, then the resulting render will be blurry in one dimension. Anisotropic filtering fixes this by decoupling the dimensions and sampling mipmaps with differing width and height.
+
+**Cube Map:** A cube map is a 3 dimensional texture sampled with a normal vector. Things like skyboxes are textured by cube maps.
