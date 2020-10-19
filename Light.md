@@ -6,4 +6,8 @@
 
 * **Fresnel Reflection:** The Fresnel effect shows that a surface is more reflective when observed at a shallower angle, such as the edge of an object. The Fresnel equations are the mathematics to describe how reflective at any given point an object is. The smoother a surface, the stronger the Fresnel reflections are.
 
+### Techniques
+
+**Lightmapping:** Lighting calculations are very costly, lightmapping provides a way to calculate light once and continually reuse it from then on. Lightmapping does not work for dynamic scenes as lighting must be recalculated every time something moves, but lightmapping is perfect for static geometry. Lightmapping also does not work for specular reflections. Another word for lightmapping is baked lighting.
+
 **Image Based Lighting:** Image based lighting uses a cube map to inform an object of its ambient light. By painting on the environment surrounding an object, blurring it, and lowering the intensity, you can easily fake how ambient light is affecting an object.
