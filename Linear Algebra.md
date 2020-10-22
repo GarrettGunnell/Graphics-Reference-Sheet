@@ -9,3 +9,5 @@
 **Cross Product:** The cross product of two vectors is another vector that is at a right angle to both, also known as perpendicular. The magnitude of this vector equals the area of a parallelogram with the original two vectors as its sides.
 
 * **Bitangent / Binormal:** The cross product of a normal vector *N* and its tangent vector *T* results in the bitangent vector *B*. Using these three vectors we can construct an orientation matching the real orientation of the face at any given point. This allows us to match the real orientation of the face when bump mapping.
+
+**Barycentric Coordinates:** These coordinates exist within a shape (such as a triangle) and tell you where you are relative to the vertices of the shape. Each component of the coordinate is 0 along one edge and 1 at the vertex opposite that edge.

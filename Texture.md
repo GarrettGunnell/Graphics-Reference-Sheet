@@ -28,6 +28,8 @@
 
 **Cube Map:** A cube map is a 3 dimensional texture sampled with a normal vector. Things like skyboxes are textured with cube maps.
 
+**Parallax Map:** Basically the same thing as a height map, but called a parallax map when used to create a parallax effect.
+
 ### Normal Blending
 
 * When using both a base normal map and a detail normal map, there are several ways to blend these normals together to produce more satisfying results.
